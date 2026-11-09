@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f6e8e8, #e8d9e3, #e9e5ef);
+  color: #342b32;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.phone {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 25px 22px;
+  background: #fffaf9;
+  position: relative;
+  overflow: hidden;
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 4px 35px;
+}
+
+.welcome {
+  margin-bottom: 45px;
+}
+
+.welcome p {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #a17c8d;
+  font-weight: bold;
+}
+
+.welcome h1 {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: normal;
+  margin: 12px 0;
+}
+
+.welcome span {
+  color: #98858e;
+  font-size: 13px;
+}.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 250px;
+}
+
+.app-icon {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #493d45;
+}
+
+.app-icon span {
+  width: 65px;
+  height: 65px;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  font-size: 29px;
+  box-shadow: 0 5px 15px #00000012;
+}
+
+.app-window {
+  margin-top: 45px;
+  padding: 22px;
+  background: #f8eff2;
+  border-radius: 22px;
+  min-height: 190px;
+}
+
+.app-window h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.app-window p {
+  font-size: 13px;
+  color: #766772;
+  line-height: 1.6;
+}.back {
+  background: transparent;
+  color: #a16e86;
+  font-size: 13px;
+}
+
+.coming {
+  font-style: italic;
+}
+
+footer {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #b5a3ad;
+}
+
+@media (min-width: 600px) {
+  body {
+    padding: 30px 0;
+  }
+
+  .phone {
+    min-height: 850px;
+    border-radius: 35px;
+    box-shadow: 0 15px 60px #5d405b20;
+  }
+}
