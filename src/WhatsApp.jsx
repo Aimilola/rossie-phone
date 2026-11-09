@@ -44,7 +44,7 @@ export default function WhatsApp() {
       .from('chats')
       .insert({
         name: newChat.trim(),
-        chat_type: 'personal'
+        chat_type: 'private'
       })
       .select()
       .single();
