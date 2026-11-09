@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from './supabase';
+import WhatsApp from './WhatsApp';
 
 const apps = [
   { name: 'WhatsApp', icon: '💬', color: '#25D366', id: 'whatsapp' },
@@ -113,15 +114,16 @@ export default function App() {
           >
             ← Volver
           </button>
-          <h2>
-            {activeApp === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
-          </h2>
-          <p>
-            {activeApp === 'whatsapp'
-              ? 'Tus conversaciones aparecerán aquí.'
-              : 'Tu feed y tus mensajes aparecerán aquí.'}
-          </p>
-          <p className="coming">Conectando tu mundo digital ✨</p>
+          
+         {activeApp === 'whatsapp' ? (
+  <WhatsApp />
+) : (
+  <>
+    <h2>Instagram</h2>
+    <p>Tu feed aparecerá aquí.</p>
+    <p className="coming">Conectando tu mundo digital ✨</p>
+  </>
+)}
         </section>
       )}
 
