@@ -76,9 +76,29 @@ export default function WhatsApp() {
     }
   }
 
-  useEffect(() => {
-    loadChats();
-  }, []);
+ useEffect(() => {
+  loadChats();
+
+  const channel = supabase
+    .channel('whatsapp-live')
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'chats' },
+      () => loadChats()
+    )
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'messages' },
+      () => {
+        if (selected) loadMessages(selected);
+      }
+    )
+    .subscribe();
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, [selected]);
 
   return (
     <section style={{ padding: 16 }}>
